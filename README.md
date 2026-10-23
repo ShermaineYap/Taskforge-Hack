@@ -1,5 +1,7 @@
 # Rejoin
 
+[![tests](https://github.com/ShermaineYap/Taskforge-Hack/actions/workflows/tests.yml/badge.svg)](https://github.com/ShermaineYap/Taskforge-Hack/actions/workflows/tests.yml) [![live demo](https://github.com/ShermaineYap/Taskforge-Hack/actions/workflows/pages.yml/badge.svg)](https://shermaineyap.github.io/Taskforge-Hack/)
+
 **Missed the group chat? Get only the parts that need you.**
 
 Rejoin turns a WhatsApp chat export into a personal handoff: what was asked of you, what's waiting for your answer, what was decided while you were away, and every date that matters. Each item links to the exact message it came from, so you can trust it without scrolling back through hundreds of messages.

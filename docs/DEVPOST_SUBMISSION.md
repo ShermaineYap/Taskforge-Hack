@@ -1,6 +1,6 @@
 # Devpost submission: Rejoin
 
-Copy each section into the matching Devpost field. Edit anything in [square brackets] first.
+Copy each section into the matching Devpost field.
 
 ---
 
@@ -13,12 +13,13 @@ Copy each section into the matching Devpost field. Edit anything in [square brac
 **Try it out:**
 - Live demo: https://shermaineyap.github.io/Taskforge-Hack/
 - Code: https://github.com/ShermaineYap/Taskforge-Hack
+- Demo video (also in the repo): https://github.com/ShermaineYap/Taskforge-Hack/blob/main/docs/rejoin-demo.mp4
 
 ---
 
 ## Inspiration
 
-At university, group work runs on WhatsApp. Step away for a few days of exams or work shifts and you come back to hundreds of messages. Somewhere in there you were given a task, someone asked you a question, and the plan changed. [Add one sentence from your own experience here if you have one, e.g. a time you missed a task buried in a group chat.]
+At university, group work runs on WhatsApp. Step away for a few days of exams or work shifts and you come back to hundreds of messages. Somewhere in there you were given a task, someone asked you a question, and the plan changed.
 
 For a lot of people, that wall of unread messages is the real barrier, not the work itself. It's harder with ADHD or anxiety (easy to avoid, hard to start), with dyslexia or when reading in a second language (slow to decode), and if you're deaf or hard of hearing (anything said only in a voice note is gone). WhatsApp has no "what did I miss that involves me?" view, so we built one.
 
@@ -56,7 +57,6 @@ Accessibility is built into the core flow: Atkinson Hyperlegible type, larger te
 
 - Offline engine on the demo chat: precision 0.89, recall 1.00, F1 0.94.
 - Offline engine on a **held-out** chat (different format, domain and language mix, not used for tuning): F1 0.67. It finds every ask but misses decisions announced without a cue word. That gap is why the AI reader with grounding checks is the default.
-- [If you ran it: AI engine on the held-out chat: P __ / R __ / F1 __.]
 - Accessibility: 0 axe-core violations (WCAG 2.0–2.2 A/AA rules) across 17 states, light and dark, desktop and mobile. The keyboard-only path is tested end to end.
 
 ## Challenges we ran into
@@ -95,4 +95,4 @@ Accessibility is built into the core flow: Atkinson Hyperlegible type, larger te
 
 ## AI assistance and prior work
 
-Built during the Taskforge period (17–24 Oct 2026). Claude (Anthropic) was used for research, most of the code, tests, demo data and writing, with [Shermaine] directing, reviewing, running and editing. At runtime Rejoin optionally uses Llama 3.3 70B and Whisper via Groq. Open-source libraries: Flask, Requests, pytest, Playwright, axe-core. All demo chats and names are fictional. Full disclosure: `AI_ASSISTANCE.md` in the repo.
+Built during the Taskforge period (17–24 Oct 2026). Claude (Anthropic) was used for research, most of the code, tests, demo data and writing, with Shermaine directing, reviewing, running and editing. At runtime Rejoin optionally uses Llama 3.3 70B and Whisper via Groq. Open-source libraries: Flask, Requests, pytest, Playwright, axe-core. All demo chats and names are fictional. The demo video's narration is a synthetic voice (Piper TTS). Full disclosure: `AI_ASSISTANCE.md` in the repo.

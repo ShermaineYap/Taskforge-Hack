@@ -10,10 +10,13 @@ Copy each section into the matching Devpost field.
 
 **Built with:** python, flask, javascript, html5, css3, pyodide, groq, llama-3.3, whisper, github-pages, playwright, axe-core, pytest
 
+**Video demo link (Devpost video field):** https://youtu.be/DBWL6flZ7Kw
+
 **Try it out:**
 - Live demo: https://shermaineyap.github.io/Taskforge-Hack/
 - Code: https://github.com/ShermaineYap/Taskforge-Hack
-- Demo video (also in the repo): https://github.com/ShermaineYap/Taskforge-Hack/blob/main/docs/rejoin-demo.mp4
+- Demo video: https://youtu.be/DBWL6flZ7Kw
+- Demo video file in the repo: https://github.com/ShermaineYap/Taskforge-Hack/blob/main/docs/rejoin-demo.mp4
 
 ---
 

@@ -8,7 +8,7 @@ Rejoin turns a WhatsApp chat export into a personal handoff: what was asked of y
 
 **Try it now: [https://shermaineyap.github.io/Taskforge-Hack/](https://shermaineyap.github.io/Taskforge-Hack/)** (runs entirely in your browser; nothing is uploaded)
 
-**Watch the 2-minute demo:** [docs/rejoin-demo.mp4](docs/rejoin-demo.mp4) (narrated, with captions)
+**Watch the 2-minute demo:** [YouTube](https://youtu.be/DBWL6flZ7Kw) or [docs/rejoin-demo.mp4](docs/rejoin-demo.mp4) (narrated, with captions)
 
 Built for the [Taskforge hackathon](https://taskforge.devpost.com/) (October 2026).
 

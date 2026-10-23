@@ -1,0 +1,47 @@
+[
+ {
+  "id": "intro",
+  "text": "This is Aina. She muted her final-year project group chat for one week of exams. When she came back, there were three hundred and seventeen messages, and seven voice notes.",
+  "dur": 11.993832199546485
+ },
+ {
+  "id": "wall",
+  "text": "Somewhere in there, she was given work. For people with ADHD, dyslexia or anxiety, a wall like this is the barrier, not the work. And if you're deaf or hard of hearing, anything said in a voice note is simply gone.",
+  "dur": 15.581315192743764
+ },
+ {
+  "id": "home",
+  "text": "Rejoin reads a WhatsApp chat export. You add your name and any nicknames, and it catches you up on everything since you last spoke.",
+  "dur": 9.363809523809524
+ },
+ {
+  "id": "slip",
+  "text": "Three hundred and seventeen messages, about five minutes of reading plus all that scrolling, become seven things that need her. About one minute to read.",
+  "dur": 9.688888888888888
+ },
+ {
+  "id": "asks",
+  "text": "Here's what was asked of her. This one was only ever said in a voice note, and Rejoin turned it into text. Every item shows the exact message it came from, so she can check it in one click.",
+  "dur": 14.257777777777777
+ },
+ {
+  "id": "rest",
+  "text": "Then, the questions waiting for her answer. The decisions made while she was away, like switching to IEEE referencing. And every date, which she can add to her calendar in one click.",
+  "dur": 12.980680272108843
+ },
+ {
+  "id": "comfort",
+  "text": "Plain language rewrites each item in short, simple words. Rejoin can read everything aloud. And the reading comfort settings change the typeface, the spacing, and the contrast.",
+  "dur": 13.108390022675737
+ },
+ {
+  "id": "reply",
+  "text": "There's even a message ready to rejoin the group with. Under the hood, phone numbers are masked first. With the AI reader, any item that doesn't point at a real message is thrown away, and dates are worked out by code, not by the model.",
+  "dur": 16.28952380952381
+ },
+ {
+  "id": "outro",
+  "text": "Thirty-two tests. Zero automated accessibility violations across seventeen screens. And an honest evaluation on a chat it was never tuned on. The live demo runs entirely in your browser, so your chat is never uploaded. Rejoin. Get only the parts that need you.",
+  "dur": 20.557278911564627
+ }
+]

@@ -8,6 +8,8 @@ Rejoin turns a WhatsApp chat export into a personal handoff: what was asked of y
 
 **Try it now: [https://shermaineyap.github.io/Taskforge-Hack/](https://shermaineyap.github.io/Taskforge-Hack/)** (runs entirely in your browser; nothing is uploaded)
 
+**Watch the 2-minute demo:** [docs/rejoin-demo.mp4](docs/rejoin-demo.mp4) (narrated, with captions)
+
 Built for the [Taskforge hackathon](https://taskforge.devpost.com/) (October 2026).
 
 ![The filled-in "While you were out" slip for the demo chat](docs/screenshots/02-filled-slip.png)
@@ -164,7 +166,7 @@ engine/                parser, dates, redact, rules, llm, voice, ics, handoff
 templates/, static/    the single-page UI (vanilla JS, no framework; Flask or in-browser Pyodide back end)
 demo/                  fictional demo chat, voice-note transcripts, labels, generator
 demo/heldout/          held-out labelled chat
-scripts/               evaluate.py, a11y_check.py, screenshots.py, build_site.py
+scripts/               evaluate.py, a11y_check.py, screenshots.py, build_site.py, record_video.py
 tests/                 pytest suite
 docs/                  evaluation, accessibility report, screenshots
 ```

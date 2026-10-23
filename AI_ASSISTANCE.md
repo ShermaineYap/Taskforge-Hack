@@ -7,6 +7,8 @@ Taskforge asks entrants to identify AI assistance and pre-existing work. Here is
 - **Claude (Anthropic)** was used during the hackathon period to research the hackathon brief and existing tools, choose the project direction, and write most of the code, tests, the demo chats and the documentation, with Shermaine directing, reviewing, running and editing the work.
 - **At runtime**, Rejoin optionally calls **Llama 3.3 70B** (via Groq) to read the chat, and **Whisper** (via Groq) to transcribe voice notes. The model output is checked by Rejoin's own code before it's shown (see README, "Why the model doesn't get the last word").
 
+- **Demo video:** recorded automatically with Playwright (`scripts/record_video.py`). The narration is a synthetic voice (Piper TTS, "Amy" voice), not a human; the script is in `docs/video-narration.json`.
+
 ## Pre-existing work
 
 - None of Rejoin's code existed before 17 October 2026.

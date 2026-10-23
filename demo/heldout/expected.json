@@ -1,0 +1,68 @@
+{
+  "persona": "Kumar",
+  "me": [
+    "Kumar"
+  ],
+  "since": "last_spoke",
+  "note": "Held-out chat written after the rule engine was frozen; not used for tuning. iOS export format, different domain (cafe shift team), Malay request phrasing.",
+  "labels": [
+    {
+      "category": "asked_of_you",
+      "match": "Kumar boleh tak cover Sunday morning shift"
+    },
+    {
+      "category": "asked_of_you",
+      "match": "please also restock the oat milk"
+    },
+    {
+      "category": "open_questions",
+      "match": "did you finish the allergen training module"
+    },
+    {
+      "category": "deadlines",
+      "match": "did you finish the allergen training module"
+    },
+    {
+      "category": "decisions",
+      "match": "the espresso machine is getting serviced Thursday"
+    },
+    {
+      "category": "decisions",
+      "match": "New rule from HQ: all staff must clock in"
+    },
+    {
+      "category": "deadlines",
+      "match": "New rule from HQ: all staff must clock in"
+    },
+    {
+      "category": "decisions",
+      "match": "We decided to stop selling the tuna sandwich"
+    },
+    {
+      "category": "open_questions",
+      "match": "Staff meeting this Friday 17 Oct 9pm"
+    },
+    {
+      "category": "deadlines",
+      "match": "Staff meeting this Friday 17 Oct 9pm"
+    },
+    {
+      "category": "decisions",
+      "match": "Staff meeting this Friday 17 Oct 9pm"
+    },
+    {
+      "category": "neutral",
+      "match": "Kumar you left your powerbank"
+    },
+    {
+      "category": "deadlines",
+      "match": "Kumar boleh tak cover Sunday morning shift",
+      "note": "added after first scoring run for consistency with the labelling guide"
+    },
+    {
+      "category": "deadlines",
+      "match": "please also restock the oat milk",
+      "note": "added after first scoring run for consistency with the labelling guide"
+    }
+  ]
+}

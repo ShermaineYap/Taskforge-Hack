@@ -1,0 +1,138 @@
+{
+  "axe_version": "4.14.0",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "states_scanned": 17,
+  "serious_or_critical_total": 0,
+  "keyboard": {
+    "demo_reachable_by_tab": true,
+    "focus_moves_to_results": true,
+    "status_announced": "Done. 7 things need you."
+  },
+  "states": [
+    {
+      "state": "desktop/light/start",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/light/comfort-panel",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/light/results-expanded",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/light/plain-language",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/light/start",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/light/comfort-panel",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/light/results-expanded",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/light/plain-language",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/dark/start",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/dark/comfort-panel",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/dark/results-expanded",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/dark/plain-language",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/dark/start",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/dark/comfort-panel",
+      "passes": 25,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/dark/results-expanded",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "mobile/dark/plain-language",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    },
+    {
+      "state": "desktop/high-contrast-large-readable/results",
+      "passes": 29,
+      "violations": 0,
+      "serious_or_critical": 0,
+      "issues": []
+    }
+  ]
+}

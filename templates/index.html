@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rejoin — catch up on the group chat</title>
+  <meta name="description" content="Missed the group chat? Rejoin turns a WhatsApp export into the few things that need you, each linked to the message it came from.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='3' y='5' width='26' height='22' rx='2' fill='%23F7D6DC' stroke='%231A2847' stroke-width='2'/><path d='M9 13h14M9 18h9' stroke='%231A2847' stroke-width='2'/></svg>">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="top">
+    <p class="wordmark" aria-label="Rejoin">Rejoin</p>
+    <button type="button" class="comfort-toggle" aria-expanded="false" aria-controls="comfort">
+      Reading comfort
+    </button>
+  </header>
+
+  <aside id="comfort" class="comfort" hidden aria-labelledby="comfort-title">
+    <h2 id="comfort-title">Reading comfort</h2>
+    <p class="hint">These stay on this device.</p>
+    <div class="switches">
+      <label><input type="checkbox" data-pref="readable"> Plain typeface everywhere (no handwriting)</label>
+      <label><input type="checkbox" data-pref="large"> Larger text</label>
+      <label><input type="checkbox" data-pref="spacing"> Extra letter and line spacing</label>
+      <label><input type="checkbox" data-pref="contrast"> High contrast</label>
+      <label><input type="checkbox" data-pref="calm"> No motion</label>
+      <label><input type="checkbox" data-pref="plain"> Plain language (shorter, simpler sentences)</label>
+    </div>
+    <label class="field small">Reading voice speed
+      <input type="range" id="rate" min="0.6" max="1.4" step="0.1" value="1" aria-describedby="rate-out">
+      <output id="rate-out" for="rate">1.0×</output>
+    </label>
+  </aside>
+
+  <main id="main">
+    <section class="intro" aria-labelledby="intro-title">
+      <h1 id="intro-title">Missed the group chat? Get only the parts that need you.</h1>
+      <p class="lede">Drop in a WhatsApp chat export. Rejoin finds what was asked of you, what was decided, and what's due, and shows the exact message behind each one. No scrolling back through hundreds of messages.</p>
+    </section>
+
+    <form id="slip" class="slip" novalidate aria-labelledby="slip-title">
+      <div class="slip-head">
+        <h2 id="slip-title" class="slip-title">While you were out</h2>
+        <span class="slip-no" aria-hidden="true">No. 0317</span>
+      </div>
+
+      <div class="slip-row">
+        <label for="me">Your name in the chat</label>
+        <input id="me" name="me" type="text" autocomplete="name" placeholder="Aina, Ain" aria-describedby="me-hint" required>
+        <p id="me-hint" class="hint">Exactly as it shows in WhatsApp. Add nicknames after a comma.</p>
+      </div>
+
+      <div class="slip-row">
+        <label for="chat">Chat export</label>
+        <input id="chat" name="chat" type="file" accept=".txt,.zip,text/plain,application/zip" aria-describedby="chat-hint">
+        <p id="chat-hint" class="hint">A .txt file, or a .zip if you exported with media (voice notes get transcribed).</p>
+        <details class="howto">
+          <summary>How do I export a WhatsApp chat?</summary>
+          <ol>
+            <li>Open the group in WhatsApp.</li>
+            <li>Android: tap <strong>⋮</strong> → <strong>More</strong> → <strong>Export chat</strong>. iPhone: tap the group name → <strong>Export chat</strong>.</li>
+            <li>Pick <strong>Include media</strong> if you want voice notes turned into text, otherwise <strong>Without media</strong>.</li>
+            <li>Save it to Files or e-mail it to yourself, then choose it here.</li>
+          </ol>
+        </details>
+      </div>
+
+      <fieldset class="slip-row checks">
+        <legend>Catch me up on</legend>
+        {% for key, label in since_options.items() %}
+        <label class="tick"><input type="radio" name="since" value="{{ key }}" {% if loop.first %}checked{% endif %}><span>{{ label }}</span></label>
+        {% endfor %}
+      </fieldset>
+
+      <fieldset class="slip-row checks">
+        <legend>Read it with</legend>
+        <label class="tick"><input type="radio" name="engine" value="auto" {% if ai_available %}checked{% else %}disabled{% endif %}><span>AI, with every item checked against its source{% if static_site %} (when you run Rejoin yourself with an API key){% elif not ai_available %} (needs an API key on this server){% endif %}</span></label>
+        <label class="tick"><input type="radio" name="engine" value="rules" {% if not ai_available %}checked{% endif %}><span>Offline rules, nothing leaves this computer</span></label>
+      </fieldset>
+
+      <div class="slip-actions">
+        <button type="submit" class="btn primary">Catch me up</button>
+        <button type="button" id="demo" class="btn ghost">Try it with Aina's chat</button>
+      </div>
+      {% if static_site %}<p class="hint privacy">On this site your chat is read inside your browser. Nothing is uploaded. Phone numbers and e-mails are masked before anything is read.</p>{% else %}<p class="hint privacy">Phone numbers and e-mails are masked before anything is read. Nothing is saved on the server.</p>{% endif %}
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <div id="error" class="error" role="alert" hidden></div>
+
+    <section id="results" class="results" hidden tabindex="-1" aria-labelledby="results-title">
+      <h2 id="results-title" class="visually-hidden">Your catch-up</h2>
+
+      <div class="slip filled" aria-describedby="filled-summary">
+        <div class="slip-head">
+          <p class="slip-title" aria-hidden="true">While you were out</p>
+          <p class="slip-no" id="since-label"></p>
+        </div>
+        <dl class="tally">
+          <div><dt>Messages</dt><dd class="hand" id="t-msgs"></dd></div>
+          <div><dt>Voice notes</dt><dd class="hand" id="t-voice"></dd></div>
+          <div><dt>People talking</dt><dd class="hand" id="t-people"></dd></div>
+          <div><dt>Reading every message</dt><dd class="hand" id="t-in"></dd></div>
+          <div><dt>Reading this page</dt><dd class="hand" id="t-out"></dd></div>
+          <div><dt>Done so far</dt><dd class="hand" id="t-done">0</dd></div>
+        </dl>
+        <p class="stamp" id="stamp" aria-hidden="true"></p>
+        <p id="filled-summary" class="visually-hidden"></p>
+      </div>
+
+      <div class="toolbar" role="group" aria-label="Catch-up tools">
+        <button type="button" class="btn small" id="read-all">Read it to me</button>
+        <button type="button" class="btn small" id="plain-toggle" aria-pressed="false">Plain language</button>
+        <button type="button" class="btn small" id="show-chat">Show the full chat</button>
+      </div>
+      <div id="warnings" class="warnings" hidden></div>
+
+      <section class="block need" aria-labelledby="h-asks">
+        <h3 id="h-asks">Asked of you</h3>
+        <p class="block-note">Things someone asked you to do. Tick them off as you go.</p>
+        <ul id="asks" class="items"></ul>
+      </section>
+
+      <section class="block" aria-labelledby="h-questions">
+        <h3 id="h-questions">Waiting for your answer</h3>
+        <ul id="questions" class="items"></ul>
+      </section>
+
+      <section class="block" aria-labelledby="h-decisions">
+        <h3 id="h-decisions">Decided while you were away</h3>
+        <ul id="decisions" class="items"></ul>
+      </section>
+
+      <section class="block" aria-labelledby="h-dates">
+        <h3 id="h-dates">Dates</h3>
+        <p class="block-note">Dates for things asked of you are marked “For you”.</p>
+        <ol id="dates" class="dates"></ol>
+        <button type="button" class="btn small" id="ics">Add these dates to my calendar</button>
+      </section>
+
+      <section class="block" aria-labelledby="h-reply">
+        <h3 id="h-reply">A message to rejoin with</h3>
+        <label for="reply" class="visually-hidden">Draft reply, you can edit it</label>
+        <textarea id="reply" rows="4"></textarea>
+        <button type="button" class="btn small" id="copy-reply">Copy message</button>
+      </section>
+
+      <details class="block how" id="how">
+        <summary>How this was made</summary>
+        <ul id="how-list"></ul>
+      </details>
+
+      <details class="block chat" id="chatlog">
+        <summary id="chatlog-summary">The full chat</summary>
+        <ol id="chat-list" class="chat-list"></ol>
+      </details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Rejoin was built for the Taskforge hackathon 2026. The demo chat is fictional. <a href="https://github.com/ShermaineYap/Taskforge-Hack">Source code</a></p>
+  </footer>
+
+  {% if static_site %}<script>window.REJOIN_STATIC = { pyodide: "{{ pyodide_url }}" };</script>{% endif %}
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

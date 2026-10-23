@@ -1,0 +1,53 @@
+{
+  "set": "demo",
+  "engine": "rules",
+  "model": "Rejoin rules v1",
+  "categories": {
+    "asked_of_you": {
+      "gold": 4,
+      "found": 4,
+      "false_positives": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "decisions": {
+      "gold": 6,
+      "found": 6,
+      "false_positives": 1,
+      "precision": 0.857,
+      "recall": 1.0
+    },
+    "open_questions": {
+      "gold": 2,
+      "found": 2,
+      "false_positives": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "deadlines": {
+      "gold": 4,
+      "found": 4,
+      "false_positives": 1,
+      "precision": 0.8,
+      "recall": 1.0
+    }
+  },
+  "overall": {
+    "precision": 0.889,
+    "recall": 1.0,
+    "f1": 0.941
+  },
+  "stats": {
+    "messages": 317,
+    "voice_notes": 7,
+    "media": 17,
+    "senders": 5,
+    "words_in": 1193,
+    "read_seconds_in": 301,
+    "items_out": 14,
+    "for_you": 7,
+    "words_out": 291,
+    "read_seconds_out": 73,
+    "reduction_pct": 76
+  }
+}

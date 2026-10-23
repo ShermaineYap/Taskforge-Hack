@@ -1,0 +1,96 @@
+{
+  "persona": "Aina",
+  "me": [
+    "Aina",
+    "Ain"
+  ],
+  "since": "last_spoke",
+  "note": "Ground truth for the synthetic demo chat. 'match' is a substring of the source message text (or the voice note filename). 'neutral' items are not scored either way.",
+  "labels": [
+    {
+      "category": "decisions",
+      "match": "ok so we decided: final topic is B, the lecturer attendance ",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "asked_of_you",
+      "match": "Ok task split for the proposal draft",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "decisions",
+      "match": "Supervisor said draft due Fri 30 Oct 11.59pm, submit thru mo",
+      "sender": "Mei Ling"
+    },
+    {
+      "category": "deadlines",
+      "match": "Supervisor said draft due Fri 30 Oct 11.59pm, submit thru mo",
+      "sender": "Mei Ling"
+    },
+    {
+      "category": "asked_of_you",
+      "match": "@Aina can you send me your Figma link for the user flow you ",
+      "sender": "Priya"
+    },
+    {
+      "category": "deadlines",
+      "match": "@Aina can you send me your Figma link for the user flow you ",
+      "sender": "Priya"
+    },
+    {
+      "category": "decisions",
+      "match": "Dr Wong replied, presentation is 10 min max now, not 15. and",
+      "sender": "Daniel"
+    },
+    {
+      "category": "asked_of_you",
+      "match": "PTT-20261020-WA0001.opus",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "deadlines",
+      "match": "PTT-20261020-WA0001.opus",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "decisions",
+      "match": "Final: we use IEEE referencing, NOT APA. Aina take note ya s",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "decisions",
+      "match": "we're switching from MySQL to Firebase, easier for the demo",
+      "sender": "Farid"
+    },
+    {
+      "category": "open_questions",
+      "match": "Aina are you ok to take the Q&A part during the presentation",
+      "sender": "Mei Ling"
+    },
+    {
+      "category": "decisions",
+      "match": "Meeting moved to Monday 26 Oct 2pm, L4 discussion room. Ever",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "open_questions",
+      "match": "Meeting moved to Monday 26 Oct 2pm, L4 discussion room. Ever",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "deadlines",
+      "match": "Meeting moved to Monday 26 Oct 2pm, L4 discussion room. Ever",
+      "sender": "Jun Hao"
+    },
+    {
+      "category": "asked_of_you",
+      "match": "Aina also pls add the 3 papers I put in the drive into your ",
+      "sender": "Priya"
+    },
+    {
+      "category": "neutral",
+      "match": "Aina are u alive 😂 pls reply when u see this",
+      "sender": "Jun Hao"
+    }
+  ]
+}
